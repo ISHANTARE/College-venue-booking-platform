@@ -1,0 +1,34 @@
+<h1>Add New Venue</h1>
+<p>Create a new venue that students can book for events.</p>
+
+<div class="card" style="max-width: 600px; margin-top: 24px;">
+    {% if success %}
+        <div class="success-message">
+            The venue was successfully added to the system!
+        </div>
+        <div class="form-actions mt-4">
+            <a href="/faculty/dashboard" class="btn btn-outline" data-ajax="true">Return to Dashboard</a>
+            <a href="/faculty/add_venue" class="btn" data-ajax="true">Add Another Venue</a>
+        </div>
+    {% else %}
+        <form id="addVenueForm" action="/faculty/add_venue" method="POST" data-ajax="true">
+            <div class="form-group">
+                <label for="venue_name">Venue Name</label>
+                <input type="text" id="venue_name" name="venue_name" required placeholder="e.g. Main Auditorium">
+            </div>
+            
+            <div class="form-group">
+                <label for="is_hall">Venue Type</label>
+                <select id="is_hall" name="is_hall" required>
+                    <option value="true">Hall / Auditorium (Large Capacity)</option>
+                    <option value="false">Lab / Classroom (Smaller Capacity)</option>
+                </select>
+            </div>
+            
+            <div class="form-actions" style="margin-top: 32px;">
+                <button type="submit" class="btn">Add Venue</button>
+                <a href="/faculty/dashboard" class="btn btn-outline" data-ajax="true">Cancel</a>
+            </div>
+        </form>
+    {% endif %}
+</div>

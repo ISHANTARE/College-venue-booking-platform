@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+
+{% block title %}Home - College Venue Booking System{% endblock %}
+
+{% block content %}
+<div class="welcome-section">
+    <h1>Welcome to College Venue Booking System</h1>
+    <p>Easily book halls, auditoriums, and classrooms for your club events and functions.</p>
+    
+    <div class="features">
+        <div class="feature-card">
+            <h3>For Students</h3>
+            <p>Book venues for your club activities and events</p>
+            <a href="/login" class="btn">Login as Student</a>
+        </div>
+        
+        <div class="feature-card">
+            <h3>For Faculty</h3>
+            <p>Approve and manage venue bookings</p>
+            <a href="/login" class="btn">Login as Faculty</a>
+        </div>
+    </div>
+</div>
+{% endblock %}
